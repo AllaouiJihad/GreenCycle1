@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-request-list',
@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './request-list.component.html',
   styleUrl: './request-list.component.css'
 })
-export class RequestListComponent {
-
-}
+export class RequestListComponent {}

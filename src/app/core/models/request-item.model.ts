@@ -1,4 +1,4 @@
-import { CollectionRequest } from "./collection-request";
+import {CollectionRequest} from "./collection-request.model";
 
 export enum ItemType {
   PLASTIC = "PLASTIC",

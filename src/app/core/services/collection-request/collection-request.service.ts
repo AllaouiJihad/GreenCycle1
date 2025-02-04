@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../../environments/environment";
+import {CollectionRequest} from "../../models/collection-request.model";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollectionRequestService {
+  private api = `${environment.apiUrl}/collectionRequests`;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  saveCollectionRequest(collectionRequest: CollectionRequest): Observable<CollectionRequest> {
+    return this.http.post<CollectionRequest>(this.api, collectionRequest);
+  }
+  getCollectionRequests(): Observable<CollectionRequest[]> {
+    return this.http.get<CollectionRequest[]>(this.api);
+  }
 }

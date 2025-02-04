@@ -9,12 +9,19 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import {provideHttpClient, withFetch } from "@angular/common/http";
 import {authReducer} from "./core/stores/auth/auth.reducer";
 import {AuthEffects} from "./core/stores/auth/auth.effects";
+import {
+  collectionRequestReducer,
+  collectionRequestsFeatureKey
+} from "./core/stores/collectionRequest/collection-request.reducer";
+import {CollectionRequestEffects} from "./core/stores/collectionRequest/collection-request.effects";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
     provideHttpClient(withFetch()),
     provideClientHydration(),
-    provideStore({ auth: authReducer }),
-    provideEffects(AuthEffects),
+    provideStore({
+      auth: authReducer,
+      [collectionRequestsFeatureKey]: collectionRequestReducer    }),
+    provideEffects(AuthEffects, CollectionRequestEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
 };

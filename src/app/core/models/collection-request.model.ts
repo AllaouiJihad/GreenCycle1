@@ -1,4 +1,5 @@
-import { User } from "./user";
+import {User} from "./user.model";
+import {RequestItem} from "./request-item.model";
 
 export enum CollectionStatus {
   PENDING = "PENDING",

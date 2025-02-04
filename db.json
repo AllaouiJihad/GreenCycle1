@@ -205,9 +205,151 @@
       "id": "bce5",
       "email": "fybow@mailinator.com",
       "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "b7e7",
+      "firstName": "Wayne",
+      "lastName": "Mcdonald",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com",
+      "address": "",
+      "city": "",
+      "phone": "+1 (246) 664-5857",
+      "birthDate": "2020-11-18",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "2603",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "19db",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "2f83",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "1563",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "288d",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "db22",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "82ec",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "6ec9",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "91f6",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "248e",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "cb89",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "a834",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "7788",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "3774",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "a7b9",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "06a9",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "d762",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
     }
   ],
-  "collectionRequests": [],
+  "collectionRequests": [
+    {
+      "id": 1,
+      "user": {
+        "id": "3cb6",
+        "firstName": "Randall",
+        "lastName": "Small",
+        "email": "mowu@mailinator.com",
+        "address": "Incidunt inventore",
+        "city": "Nam sint beatae minu",
+        "phone": "+1 (414) 478-5409",
+        "birthDate": "1978-07-15",
+        "role": "PARTICULAR",
+        "createdAt": "2025-02-04",
+        "profilePicture": "1737378429576.jpg"
+      },
+      "estimatedWeight": 15.5,
+      "address": "123 Main Street",
+      "city": "New York",
+      "collectionDate": "2025-02-10T08:00:00Z",
+      "timeSlot": "08:00-10:00",
+      "status": "PENDING",
+      "additionalNotes": "Leave at the backdoor.",
+      "items": [
+        {
+          "id": 101,
+          "requestId": 1,
+          "wasteType": "PLASTIC",
+          "weight": 5.2,
+          "photo": "plastic_bottles.jpg",
+          "createdAt": "2025-02-04T10:30:00Z"
+        },
+        {
+          "id": 102,
+          "requestId": 1,
+          "wasteType": "GLASS",
+          "weight": 7.3,
+          "photo": "glass_jars.jpg",
+          "createdAt": "2025-02-04T10:35:00Z"
+        }
+      ],
+      "createdAt": "2025-02-04T10:00:00Z"
+    }
+  ],
   "pointsSystems": [],
   "rewardRedemptions": []
 }

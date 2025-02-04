@@ -55,7 +55,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.loginUserSuccess),
-        tap(() => this.router.navigate(['/request-create']))
+        tap(() => this.router.navigate(['/demande']))
       ),
     { dispatch: false }
   );

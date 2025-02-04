@@ -108,6 +108,103 @@
       "id": "b8a8",
       "email": "wifysyki@mailinator.com",
       "password": "wifysyki@mailinator.com"
+    },
+    {
+      "id": "6833",
+      "firstName": "Nicholas",
+      "lastName": "Mayer",
+      "email": "bedaqoquq@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "",
+      "city": "",
+      "phone": "+1 (855) 313-8766",
+      "birthDate": "2022-03-23",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737144922796.jpg"
+    },
+    {
+      "id": "087d",
+      "firstName": "Zelda",
+      "lastName": "Winters",
+      "email": "tirodox@mailinator.com",
+      "password": "tirodox@mailinator.com",
+      "address": "",
+      "city": "",
+      "phone": "+1 (768) 574-2531",
+      "birthDate": "1987-05-12",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "3436",
+      "email": "tirodox@mailinator.com",
+      "password": "tirodox@mailinator.com"
+    },
+    {
+      "id": "f45d",
+      "email": "tirodox@mailinator.com",
+      "password": "tirodox@mailinator.com"
+    },
+    {
+      "id": "517e",
+      "firstName": "Jordan",
+      "lastName": "Colon",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com",
+      "address": "",
+      "city": "",
+      "phone": "+1 (312) 993-7062",
+      "birthDate": "1971-07-30",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "d4dc",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "0428",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "b5aa",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "74f1",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "c548",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "02a0",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "466f",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "2fff",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
+    },
+    {
+      "id": "bce5",
+      "email": "fybow@mailinator.com",
+      "password": "fybow@mailinator.com"
     }
   ],
   "collectionRequests": [],

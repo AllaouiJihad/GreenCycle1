@@ -6,5 +6,5 @@ import {RequestCreateComponent} from "./particular/request-create/request-create
 export const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'request-create', component: RequestCreateComponent},
+  {path: 'demande', component: RequestCreateComponent},
 ];

@@ -16,8 +16,9 @@ export class AuthEffects {
   registerUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.registerUser),
-      switchMap(({ register }) =>
-        this.authService.register(register).pipe(
+        tap(action => console.log("Action reçue : ", action)), // Vérification
+        switchMap(({ user }) =>
+        this.authService.register(user).pipe(
           map((response) => AuthActions.registerUserSuccess({ user: response })),
           catchError((error: Error) =>
             of(AuthActions.registerUserFailure({ error: error.message }))
@@ -31,22 +32,31 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.registerUserSuccess),
-        tap(() => this.router.navigate(['/login']))
+        tap(() => this.router.navigate(['/']))
       ),
     { dispatch: false }
   );
 
-  loginUser$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(AuthActions.loginUser),
-      switchMap(({ user }) =>
-        this.authService.login(user).pipe(
-          map((response) => AuthActions.loginUserSuccess({ user: response })),
-          catchError((error: Error) =>
-            of(AuthActions.loginUserFailure({ error: error.message }))
-          )
+    loginUser$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(AuthActions.loginUser),
+            switchMap(({ login }) =>  // Remplacez 'user' par 'login'
+                this.authService.login(login).pipe(
+                    map((response) => AuthActions.loginUserSuccess({ user: response })),
+                    catchError((error: Error) =>
+                        of(AuthActions.loginUserFailure({ error: error.message }))
+                    )
+                )
+            )
         )
-      )
-    )
+    );
+
+  redirectAfterLogin$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.loginUserSuccess),
+        tap(() => this.router.navigate(['/request-create']))
+      ),
+    { dispatch: false }
   );
 }

@@ -1,5 +1,115 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "3cb6",
+      "firstName": "Randall",
+      "lastName": "Small",
+      "email": "mowu@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "Incidunt inventore ",
+      "city": "Nam sint beatae minu",
+      "phone": "+1 (414) 478-5409",
+      "birthDate": "1978-07-15",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "be7e",
+      "firstName": "Jescie",
+      "lastName": "Lamb",
+      "email": "wecuq@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "Eos officia et nostr",
+      "city": "Soluta ratione nihil",
+      "phone": "+1 (782) 445-3656",
+      "birthDate": "2019-05-02",
+      "role": "PROFESSIONAL",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "e4df",
+      "firstName": "Rajah",
+      "lastName": "Hernandez",
+      "email": "peji@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "Ut esse eaque debiti",
+      "city": "Non voluptas ut itaq",
+      "phone": "+1 (654) 386-7343",
+      "birthDate": "2003-03-09",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "0107",
+      "firstName": "Cameron",
+      "lastName": "Burnett",
+      "email": "nebokuzyka@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "Non id quam archite",
+      "city": "Iusto ad non fugit ",
+      "phone": "+1 (923) 725-2468",
+      "birthDate": "2004-02-11",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737378429576.jpg"
+    },
+    {
+      "id": "d999",
+      "firstName": "Thane",
+      "lastName": "Donaldson",
+      "email": "qytifycy@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": "Aliquip nemo vel omn",
+      "city": "Explicabo Dolor qui",
+      "phone": "+1 (833) 435-1734",
+      "birthDate": "2014-02-14",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "1737150742940.jpg"
+    },
+    {
+      "id": "64ed",
+      "firstName": "Idona",
+      "lastName": "Turner",
+      "email": "wifysyki@mailinator.com",
+      "password": "wifysyki@mailinator.com",
+      "address": "",
+      "city": "",
+      "phone": "+1 (884) 792-7371",
+      "birthDate": "1999-03-19",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-04",
+      "profilePicture": "screencapture-eldorado-co-investor-signup-2025-01-18-22_54_06.png"
+    },
+    {
+      "id": "9e7e",
+      "email": "wifysyki@mailinator.com",
+      "password": "wifysyki@mailinator.com"
+    },
+    {
+      "id": "b1f7",
+      "email": "wifysyki@mailinator.com",
+      "password": "wifysyki@mailinator.com"
+    },
+    {
+      "id": "dd9d",
+      "email": "wifysyki@mailinator.com",
+      "password": "wifysyki@mailinator.com"
+    },
+    {
+      "id": "87ae",
+      "email": "wifysyki@mailinator.com",
+      "password": "wifysyki@mailinator.com"
+    },
+    {
+      "id": "b8a8",
+      "email": "wifysyki@mailinator.com",
+      "password": "wifysyki@mailinator.com"
+    }
+  ],
   "collectionRequests": [],
   "pointsSystems": [],
   "rewardRedemptions": []

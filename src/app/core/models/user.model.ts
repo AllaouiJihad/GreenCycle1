@@ -13,7 +13,7 @@ export interface User {
   city: string;
   phone: string;
   birthDate: Date;
-  profilePicture?: string;
+  profilePicture: string;
   role: Role;
   createdAt: Date;
   updatedAt?: Date;

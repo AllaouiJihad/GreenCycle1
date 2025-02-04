@@ -1,13 +1,12 @@
-import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { Update } from '@ngrx/entity';
+import { createActionGroup, props } from '@ngrx/store';
 
-import { Auth } from './auth.model';
 import {User} from "../../models/user.model";
+import {LoginRequest} from "../../models/login-request.model";
 
 export const AuthActions = createActionGroup({
   source: 'Auth',
   events: {
-    'Register User': props<{ user: User }>(),
+    'Register User': props<{ user: User | FormData }>(),
     'Register User Success': props<{ user: User }>(),
     'Register User Failure': props<{ error: string }>(),
 

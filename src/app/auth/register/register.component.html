@@ -1,1 +1,71 @@
-<p>register works!</p>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card shadow p-4" style="max-width: 700px; width: 100%;">
+    <div class="text-center mb-3">
+      <hr class="d-inline-block w-auto">
+      <span class="fs-3 fw-bold mx-2">Register</span>
+      <hr class="d-inline-block w-auto">
+    </div>
+    <p class="text-center text-muted">Create your account. It's free and only takes a minute.</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="firstName" class="form-label">First Name</label>
+          <input id="firstName" type="text" formControlName="firstName" class="form-control" required>
+          <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched" class="text-danger">
+            First name is required.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input id="lastName" type="text" formControlName="lastName" class="form-control" required>
+          <div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched" class="text-danger">
+            Last name is required.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" type="email" formControlName="email" class="form-control" required>
+          <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger">
+            A valid email is required.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="password" class="form-label">Password</label>
+          <input id="password" type="password" formControlName="password" class="form-control" required>
+          <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="text-danger">
+            Password is required.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone</label>
+          <input id="phone" type="text" formControlName="phone" class="form-control">
+          <div *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched" class="text-danger">
+            A valid phone number is required.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="birthDate" class="form-label">Birth Date</label>
+          <input id="birthDate" type="date" formControlName="birthDate" class="form-control" required>
+          <div *ngIf="registerForm.controls['birthDate'].invalid && registerForm.controls['birthDate'].touched" class="text-danger">
+            Birth date is required.
+          </div>
+        </div>
+
+          <label class="form-label">Profile Picture</label>
+          <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control">
+        </div>
+      <button type="submit" class="btn btn-black w-100 mt-4" [disabled]="registerForm.invalid" >
+        Register
+      </button>
+    </form>
+    <div class="text-center mt-5">
+      Already have an account?  <strong><a routerLink="/"  style="color: #0a0a0a">Sign In</a></strong>
+    </div>
+  </div>
+</div>

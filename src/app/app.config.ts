@@ -6,10 +6,15 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import {provideHttpClient} from "@angular/common/http";
+import {provideHttpClient, withFetch } from "@angular/common/http";
+import {authReducer} from "./core/stores/auth/auth.reducer";
+import {AuthEffects} from "./core/stores/auth/auth.effects";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),provideHttpClient(),
+  providers: [provideRouter(routes),
+    provideHttpClient(withFetch()),
     provideClientHydration(),
-    provideStore(), provideEffects(), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
+    provideStore({ auth: authReducer }),
+    provideEffects(AuthEffects),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
 };

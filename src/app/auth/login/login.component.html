@@ -1,2 +1,35 @@
-<p>login works!</p>
-<a routerLink="/register">register</a>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card shadow p-4" style="max-width: 500px; width: 100%;">
+    <div class="text-center mb-3">
+      <hr class="d-inline-block w-25">
+      <span class="fs-3 fw-bold mx-2">Login</span>
+      <hr class="d-inline-block w-25">
+    </div>
+    <p class="text-center text-muted">Enter your credentials to access your account.</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" formControlName="email" class="form-control" required>
+        <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="text-danger">
+          A valid email is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" type="password" formControlName="password" class="form-control" required>
+        <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="text-danger">
+          Password is required.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-black w-100 mt-3" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+    <div class="text-center mt-5">
+      Don't have an account? <strong><a routerLink="/register" style="color: #0a0a0a">Sign up</a></strong>
+    </div>
+  </div>
+</div>

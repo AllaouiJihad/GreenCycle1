@@ -17,10 +17,10 @@ export class RegisterComponent {
     address: '',
     city: '',
     phone: '',
-    birthDate: new Date(), // Initialisé avec une nouvelle date
-    profilePicture: '', // Initialisé avec null
+    birthDate: new Date(),
+    profilePicture: '',
     role: Role.PARTICULAR,
-    createdAt: new Date(), // Initialisé avec une nouvelle date
-    updatedAt: new Date() // Initialisé avec une nouvelle date
+    createdAt: new Date(),
+    updatedAt: new Date()
   };
 }

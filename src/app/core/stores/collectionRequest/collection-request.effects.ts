@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {catchError, map, concatMap, switchMap} from 'rxjs/operators';
+import {catchError, map, tap, switchMap} from 'rxjs/operators';
 import { Observable, EMPTY, of } from 'rxjs';
 import { CollectionRequestActions } from './collection-request.actions';
 import {Router} from "@angular/router";
@@ -23,6 +23,18 @@ export class CollectionRequestEffects {
 
     );
   });
+  addNewCollection$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CollectionRequestActions.addNewCollectionRequest),
+      switchMap(({ collectionRequest }) =>
+        this.collectionRequestService.saveCollectionRequest(collectionRequest).pipe(
+          map((response) => CollectionRequestActions.addNewCollectionRequestSuccess({ collectionRequest: response })),
+          tap(() => this.router.navigate(['/demande'])),
+          catchError(error => of(CollectionRequestActions.addNewCollectionRequestFailure({ error: error.message })))
+        )
+      )
+    );
+  }, { dispatch: true });
 
 
 

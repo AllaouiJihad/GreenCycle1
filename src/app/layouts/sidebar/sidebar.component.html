@@ -4,11 +4,14 @@
     <div class="logo-header" data-background-color="dark">
       <a href="../index.html" class="logo">
         <img
-          src="../assets/img/kaiadmin/logo_light.svg"
+          src="../assets/img/logo2.png"
+          style="color: #0a53be"
           alt="navbar brand"
           class="navbar-brand"
-          height="20"
+          height="35"
         />
+        <span class="ms-1 text-sm text-white"><strong>Recycle</strong>Hub</span>
+
       </a>
       <div class="nav-toggle">
         <button class="btn btn-toggle toggle-sidebar">
@@ -57,16 +60,18 @@
           </a>
           <div class="collapse show" id="tables">
             <ul class="nav nav-collapse">
-              <li >
-                <a routerLink="/demande" routerLinkActive="active">
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/demande" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                   <span class="sub-item">Collections</span>
                 </a>
               </li>
-              <li>
-                <a routerLink="/" routerLinkActive="active">
+
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/system-points" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                   <span class="sub-item">Points System</span>
                 </a>
               </li>
+
               <li>
                 <a href="../tables/datatables.html">
                   <span class="sub-item">Reward</span>

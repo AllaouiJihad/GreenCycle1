@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UserService } from '../../services/user/user.service';
-import * as UserActions from './user.actions';
 import { catchError, map, switchMap, of } from 'rxjs';
+import {UserActions} from "./user.actions";
 
 @Injectable()
 export class UserEffects {

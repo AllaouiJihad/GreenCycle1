@@ -8,7 +8,15 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
+                <div class="d-flex justify-content-between">
                 <div class="card-title">Collections Table</div>
+                <button class="btn btn-black"  (click)="showModal = true">
+                        <span class="btn-label">
+                          <i class="fa fa-plus"></i>
+                        </span>
+                  Add Collection
+                </button>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -53,4 +61,9 @@
 
   </div>
 </div>
+<app-add-request
+  *ngIf="showModal"
+  (openPopup)="openPopup()"
+  (close)="closePopup()"
+></app-add-request>
 

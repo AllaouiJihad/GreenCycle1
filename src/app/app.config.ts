@@ -14,6 +14,8 @@ import {
   collectionRequestsFeatureKey
 } from "./core/stores/collectionRequest/collection-request.reducer";
 import {CollectionRequestEffects} from "./core/stores/collectionRequest/collection-request.effects";
+import {usersFeatureKey, usersReducer} from "./core/stores/user/user.reducers";
+import {UserEffects} from "./core/stores/user/user.effects";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
@@ -21,7 +23,8 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideStore({
       auth: authReducer,
+      [usersFeatureKey]: usersReducer,
       [collectionRequestsFeatureKey]: collectionRequestReducer    }),
-    provideEffects(AuthEffects, CollectionRequestEffects),
+    provideEffects(AuthEffects, CollectionRequestEffects, UserEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
 };

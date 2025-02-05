@@ -1,0 +1,44 @@
+<div *ngIf="openPopup" class="modal">  <div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addUserModalLabel">Manage User</h5>
+
+    </div>
+    <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+        <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+          <label for="user">Utilisateur :</label>
+          <select id="user" formControlName="user" required>
+            <option *ngFor="let user of users$| async" [value]="user.id">{{ user.firstName }}</option>
+          </select>
+          <label for="estimatedWeight">Poids estimé (kg) :</label>
+          <input id="estimatedWeight" type="number" formControlName="estimatedWeight" required />
+
+          <label for="address">Adresse :</label>
+          <input id="address" type="text" formControlName="address" required />
+
+          <label for="city">Ville :</label>
+          <input id="city" type="text" formControlName="city" required />
+
+          <label for="collectionDate">Date de collecte :</label>
+          <input id="collectionDate" type="date" formControlName="collectionDate" required />
+
+          <label for="timeSlot">Créneau horaire :</label>
+          <input id="timeSlot" type="text" formControlName="timeSlot" required />
+
+          <label for="status">Statut :</label>
+          <select id="status" formControlName="status">
+            <option *ngFor="let status of collectionStatusArray" [value]="status">{{ status }}</option>
+          </select>
+
+          <label for="additionalNotes">Notes supplémentaires :</label>
+          <textarea id="additionalNotes" formControlName="additionalNotes"></textarea>
+          <div class="modal-footer">
+            <button (click)="cancel()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="saveUserButton">Save User</button>
+          </div>
+        </form>
+    </div>
+
+  </div>
+</div>
+</div>

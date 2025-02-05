@@ -18,4 +18,8 @@ export class CollectionRequestService {
   getCollectionRequests(): Observable<CollectionRequest[]> {
     return this.http.get<CollectionRequest[]>(this.api);
   }
+  deleteCollectionRequest(collectionRequestId: number) {
+    return this.http.delete(`${this.api}/${collectionRequestId}`);
+  }
+
 }

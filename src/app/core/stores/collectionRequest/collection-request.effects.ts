@@ -36,6 +36,20 @@ export class CollectionRequestEffects {
     );
   }, { dispatch: true });
 
+  deleteCollection$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CollectionRequestActions.deleteCollectionRequestById),
+      switchMap(({ collectionRequestId }) =>
+        this.collectionRequestService.deleteCollectionRequest(collectionRequestId).pipe(
+          map(() => CollectionRequestActions.deleteCollectionRequestByIdSuccess({ collectionRequestId })),
+          tap(() => this.router.navigate(['/demande'])),
+          catchError((error) => of(CollectionRequestActions.deleteCollectionRequestByIdFailure({ error: error.message })))
+        )
+      )
+    );
+  });
+
+
 
 
 }

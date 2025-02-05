@@ -42,6 +42,20 @@ export const collectionRequestsFeature = createFeature({
     on(CollectionRequestActions.addNewCollectionRequestFailure, (state, {error}) => ({
       ...state,
       error
+    })),
+    on(CollectionRequestActions.deleteCollectionRequestById, (state) => ({
+      ...state,
+      error: null
+    })),
+    on(CollectionRequestActions.deleteCollectionRequestByIdSuccess, (state, { collectionRequestId }) => ({
+      ...state,
+      collectionRequests: state.collectionRequests.filter(req => req.id !== collectionRequestId),
+      error: null
+    })),
+
+    on(CollectionRequestActions.deleteCollectionRequestByIdFailure, (state, {error}) => ({
+      ...state,
+      error
     }))
   )
 });

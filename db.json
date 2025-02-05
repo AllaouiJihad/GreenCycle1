@@ -689,50 +689,100 @@
       "id": "7c4a",
       "email": "tiged@mailinator.com",
       "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "f223",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "0bee",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "7f4d",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "59ca",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "5ef8",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "f41b",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "5094",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "d591",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "e2dc",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "947d",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "648b",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "17b9",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "4e99",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "46d4",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "4d74",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "7549",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
     }
   ],
   "collectionRequests": [
     {
-      "id": 1,
-      "user": {
-        "id": "3cb6",
-        "firstName": "Randall",
-        "lastName": "Small",
-        "email": "mowu@mailinator.com",
-        "address": "Incidunt inventore",
-        "city": "Nam sint beatae minu",
-        "phone": "+1 (414) 478-5409",
-        "birthDate": "1978-07-15",
-        "role": "PARTICULAR",
-        "createdAt": "2025-02-04",
-        "profilePicture": "1737378429576.jpg"
-      },
-      "estimatedWeight": 15.5,
-      "address": "123 Main Street",
-      "city": "New York",
-      "collectionDate": "2025-02-10T08:00:00Z",
-      "timeSlot": "08:00-10:00",
-      "status": "PENDING",
-      "additionalNotes": "Leave at the backdoor.",
-      "items": [
-        {
-          "id": 101,
-          "requestId": 1,
-          "wasteType": "PLASTIC",
-          "weight": 5.2,
-          "photo": "plastic_bottles.jpg",
-          "createdAt": "2025-02-04T10:30:00Z"
-        },
-        {
-          "id": 102,
-          "requestId": 1,
-          "wasteType": "GLASS",
-          "weight": 7.3,
-          "photo": "glass_jars.jpg",
-          "createdAt": "2025-02-04T10:35:00Z"
-        }
-      ],
-      "createdAt": "2025-02-04T10:00:00Z"
+      "id": "3f34",
+      "user": "de35",
+      "estimatedWeight": 25,
+      "address": "Assumenda dolor cumq",
+      "city": "Et libero nisi venia",
+      "collectionDate": "1998-05-23",
+      "timeSlot": "Illo aut do voluptat",
+      "status": "REJECTED",
+      "additionalNotes": "Eaque et reprehender",
+      "items": null
     }
   ],
   "pointsSystems": [],

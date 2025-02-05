@@ -44,7 +44,7 @@
                         <button class="text-primary bg-body border-0" >
                           <i class="far fa-edit"></i>
                         </button>
-                        <button class="text-danger bg-body border-0" >
+                        <button class="text-danger bg-body border-0" (click)="collectionRequest.id?  deleteCollectionRequest(collectionRequest.id) : null">
                           <i class="far fa-trash-alt"></i>
                         </button>
                       </td>
@@ -64,6 +64,6 @@
 <app-add-request
   *ngIf="showModal"
   (openPopup)="openPopup()"
-  (close)="closePopup()"
+  (closePopup)="closePopup()"
 ></app-add-request>
 

@@ -40,6 +40,10 @@ export class RequestCreateComponent implements OnInit{
     console.log('Opening modal');
     this.showModal = true;
   }
+  deleteCollectionRequest(collectionRequestId: number) {
+    this.store.dispatch(CollectionRequestActions.deleteCollectionRequestById({ collectionRequestId }));
+  }
+
 
 
 }

@@ -28,4 +28,8 @@ export class CollectionRequestService {
   getCollectionRequestById(collectionRequestId: number): Observable<CollectionRequest> {
     return this.http.get<CollectionRequest>(`${this.api}/${collectionRequestId}`);
   }
+  updateStatus(collectionRequestId: number , status: string): Observable<CollectionRequest> {
+    const statusUpdate = { status };
+    return this.http.patch<CollectionRequest>(`${this.api}/${collectionRequestId}`, statusUpdate);
+  }
 }

@@ -4,6 +4,7 @@ import {RegisterComponent} from "./auth/register/register.component";
 import {RequestCreateComponent} from "./particular/collection-management/request-create/request-create.component";
 import {PointsSystemComponent} from "./collector/points-system/points-system.component";
 import {ProfilComponent} from "./particular/profil/profil.component";
+import {RequestListComponent} from "./collector/request-list/request-list.component";
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -11,4 +12,5 @@ export const routes: Routes = [
   {path: 'demande', component: RequestCreateComponent},
   {path: 'system-points', component: PointsSystemComponent},
   {path: 'profil', component: ProfilComponent},
+  {path: 'request-list', component: RequestListComponent},
 ];

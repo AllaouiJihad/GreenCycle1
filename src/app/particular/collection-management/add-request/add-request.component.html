@@ -10,44 +10,40 @@
       <div class="modal-body" style="max-height: 400px; overflow-y: auto; ">
         <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label for="user">Utilisateur :</label>
+            <label for="user">Utilisateur :</label><span class="required-indicator">*</span>
             <select id="user" class="form-control" formControlName="user" required>
               <option *ngFor="let user of users$ | async" [value]="user.id">{{ user.firstName }}</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="estimatedWeight">Poids estimé (kg) :</label>
-            <input id="estimatedWeight" type="number" class="form-control" formControlName="estimatedWeight" required />
-          </div>
 
           <div class="form-group">
-            <label for="address">Adresse :</label>
+            <label for="address">Adresse :</label><span class="required-indicator">*</span>
             <input id="address" type="text" class="form-control" formControlName="address" required />
           </div>
 
           <div class="form-group">
-            <label for="city">Ville :</label>
+            <label for="city">Ville :</label><span class="required-indicator">*</span>
             <input id="city" type="text" class="form-control" formControlName="city" required />
           </div>
 
           <div class="form-group">
-            <label for="collectionDate">Date de collecte :</label>
+            <label for="collectionDate">Date de collecte :</label><span class="required-indicator">*</span>
             <input id="collectionDate" type="date" class="form-control" formControlName="collectionDate" required />
           </div>
 
           <div class="form-group">
-            <label for="timeSlot">Créneau horaire :</label>
+            <label for="timeSlot">Créneau horaire :</label><span class="required-indicator">*</span>
             <input id="timeSlot" type="text" class="form-control" formControlName="timeSlot" required />
           </div>
 
           <div class="form-group">
-            <label for="status">Statut :</label>
+            <label for="status">Statut :</label><span class="required-indicator">*</span>
             <select id="status" class="form-control" formControlName="status">
               <option *ngFor="let status of collectionStatusArray" [value]="status">{{ status }}</option>
             </select>
           </div>
-          <button type="button" (click)="addItem()" class="btn btn-secondary">
+          <button type="button" (click)="addItem()" class="btn btn-secondary" style="margin-left: 10px">
             Ajouter un item
           </button>
           <div formArrayName="items">
@@ -57,7 +53,7 @@
               class="form-group row"
             >
               <div class="col-md-6">
-              <label for="wasteType">Type de déchet :</label>
+              <label for="wasteType">Type de déchet :</label><span class="required-indicator">*</span>
               <select id="wasteType" class="form-control" formControlName="wasteType" required>
                 <option *ngFor="let type of itemTypes" [value]="type">
                   {{ type }}
@@ -65,12 +61,15 @@
               </select>
               </div>
               <div class="col-md-6">
-              <label for="weight">Poids (kg) :</label>
+              <label for="weight">Poids (kg) :</label><span class="required-indicator">*</span>
               <input id="weight" type="number" class="form-control" formControlName="weight" required />
               </div>
             </div>
           </div>
-
+          <div class="form-group">
+            <label for="estimatedWeight">Poids estimé (kg) :</label><span class="required-indicator">*</span>
+            <input id="estimatedWeight" type="number" class="form-control" formControlName="estimatedWeight" required />
+          </div>
           <!-- Bouton pour ajouter un nouvel item -->
           <div class="form-group">
             <label for="additionalNotes">Notes supplémentaires :</label>

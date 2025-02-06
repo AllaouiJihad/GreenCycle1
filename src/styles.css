@@ -27,3 +27,28 @@
 .modal-body::-webkit-scrollbar {
   display: none;
 }
+.required-indicator {
+  color: red;
+  margin-left: 4px;
+}
+
+.form-select {
+  color: white !important;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  width: auto;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none !important;
+}
+
+/* Modifier la couleur du texte des options */
+.form-select option {
+  color: black;
+}
+
+

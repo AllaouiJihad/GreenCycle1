@@ -39,7 +39,19 @@
                       <td>{{ collectionRequest.city }}</td>
                       <td>{{ collectionRequest.collectionDate }}</td>
                       <td>{{ collectionRequest.timeSlot }}</td>
-                      <td>{{ collectionRequest.status }}</td>
+                      <td>
+                          <span
+                            class="badge"
+                            [ngClass]="{
+                              'bg-warning text-dark': collectionRequest.status === 'PENDING',
+                              'bg-primary text-white': collectionRequest.status === 'OCCUPIED',
+                              'bg-info text-white': collectionRequest.status === 'IN-PROGRESS',
+                              'bg-success text-white': collectionRequest.status === 'VALIDATED',
+                              'bg-danger text-white': collectionRequest.status === 'REJECTED'
+                            }">
+                            {{ collectionRequest.status }}
+                          </span>
+                      </td>
                       <td class="align-middle text-center">
                         <button class="text-primary bg-body border-0" (click)="collectionRequest.id?editCollectionRequest(collectionRequest.id) : null">
                           <i class="far fa-edit"></i>

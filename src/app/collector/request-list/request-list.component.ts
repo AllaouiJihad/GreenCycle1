@@ -39,7 +39,7 @@ export class RequestListComponent implements OnInit {
     this.collectionRequests$.subscribe(requests => {
       this.collectionRequests = requests.map(request => ({
         ...request,
-        status: request.status as CollectionStatus // ✅ Convertir en enum
+        status: request.status as CollectionStatus
       }));
     });
 
@@ -52,15 +52,12 @@ export class RequestListComponent implements OnInit {
       return;
     }
 
-    // Convertir newStatus en CollectionStatus
     const updatedRequest = { ...originalRequest, status: newStatus as CollectionStatus };
 
-    // Mettre à jour la liste locale
     this.collectionRequests = this.collectionRequests.map(request =>
       request.id === updatedRequest.id ? updatedRequest : request
     );
 
-    // Envoyer la requête au backend
     if (updatedRequest.id !== undefined) {
       this.collectionRequestService.updateStatus(updatedRequest.id, updatedRequest.status).subscribe({
         next: (response) => {

@@ -65,23 +65,23 @@
       "items": null
     },
     {
-      "id": "53d4",
-      "user": "6ba1",
-      "estimatedWeight": 88,
-      "address": "Exercitation ipsa a",
-      "city": "Ullam sed inventore ",
-      "collectionDate": "2012-05-06",
-      "timeSlot": "Officiis ipsam deser",
-      "status": "REJECTED",
-      "additionalNotes": "Excepteur non repell",
+      "id": "3afa",
+      "user": "3cb6",
+      "estimatedWeight": 84,
+      "address": "Aute consequatur sed",
+      "city": "Aut eius enim commod",
+      "collectionDate": "2023-11-13",
+      "timeSlot": "Eum vel voluptas qua",
+      "status": "OCCUPIED",
+      "additionalNotes": "Molestiae accusantiu",
       "items": [
         {
-          "wasteType": "PLASTIC",
-          "weight": 88
+          "wasteType": "METAL",
+          "weight": 20
         },
         {
-          "wasteType": "PAPER",
-          "weight": 38
+          "wasteType": "PLASTIC",
+          "weight": 69
         }
       ]
     }

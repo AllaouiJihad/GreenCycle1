@@ -40,27 +40,21 @@ export class AddRequestComponent implements OnInit {
   itemTypes = Object.values(ItemType);
 
   constructor(private store: Store, private fb: FormBuilder) {
-    // Récupère la liste des utilisateurs
     this.users$ = this.store.select(selectUsers);
-    // Initialise le formulaire via la fonction createCollectionRequestValidator
     this.requestForm = createCollectionRequestValidator(this.fb);
   }
 
   ngOnInit(): void {
     this.store.dispatch(UserActions.loadUsers());
 
-    // Si on édite une requête existante (initialRequestData non nul)
     if (this.initialRequestData) {
-      // On met à jour les champs simples
       this.requestForm.patchValue(this.initialRequestData);
 
-      // On récupère le tableau d'items s'il existe
       const items = this.initialRequestData.items ?? [];
       items.forEach(item => this.addItem(item));
     }
   }
 
-  // Méthode appelée à la soumission du formulaire
   onSubmit(): void {
     const formValues = this.requestForm.getRawValue();
 
@@ -78,37 +72,28 @@ export class AddRequestComponent implements OnInit {
     };
 
     if (this.initialRequestData) {
-      // Mise à jour d'une requête existante
       this.store.dispatch(CollectionRequestActions.updateCollectionRequest({ collectionRequest }));
     } else {
-      // Création d'une nouvelle requête
       this.store.dispatch(CollectionRequestActions.addNewCollectionRequest({ collectionRequest }));
     }
 
-    // On réinitialise le formulaire
     this.requestForm.reset();
-    // Fermeture du popup
     this.cancel();
-    // On remet initialRequestData à null
     this.initialRequestData = null;
   }
 
-  // Ouvre la pop-up (si vous gérez son ouverture depuis ce composant)
   open(): void {
     this.openPopup.emit();
   }
 
-  // Ferme la pop-up
   cancel(): void {
     this.closePopup.emit();
   }
 
-  // Getter pour accéder au FormArray "items"
   get items(): FormArray {
     return this.requestForm.get('items') as FormArray;
   }
 
-  // Ajoute un item dans le FormArray
   addItem(item?: RequestItem): void {
     const itemFormGroup = this.fb.group({
       wasteType: [item?.wasteType || '', Validators.required],

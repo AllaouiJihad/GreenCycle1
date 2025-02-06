@@ -37,19 +37,24 @@ export class AuthEffects {
     { dispatch: false }
   );
 
-    loginUser$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(AuthActions.loginUser),
-            switchMap(({ login }) =>  // Remplacez 'user' par 'login'
-                this.authService.login(login).pipe(
-                    map((response) => AuthActions.loginUserSuccess({ user: response })),
-                    catchError((error: Error) =>
-                        of(AuthActions.loginUserFailure({ error: error.message }))
-                    )
-                )
-            )
+  loginUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.loginUser),
+      switchMap(({ login }) =>
+        this.authService.login(login).pipe(
+          tap(response => {
+            localStorage.setItem('user', JSON.stringify(response));
+            localStorage.setItem('userId', String(response.id));
+          }),
+          map((response) => AuthActions.loginUserSuccess({ user: response })),
+          catchError((error: Error) =>
+            of(AuthActions.loginUserFailure({ error: error.message }))
+          )
         )
-    );
+      )
+    )
+  );
+
 
   redirectAfterLogin$ = createEffect(
     () =>

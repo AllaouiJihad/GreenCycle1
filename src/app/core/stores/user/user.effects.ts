@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UserService } from '../../services/user/user.service';
 import { catchError, map, switchMap, of } from 'rxjs';
 import {UserActions} from "./user.actions";
+import {CollectionRequestActions} from "../collectionRequest/collection-request.actions";
 
 @Injectable()
 export class UserEffects {
@@ -19,4 +20,17 @@ export class UserEffects {
       )
     )
   );
+
+  loadUserById$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(UserActions.getUserById),
+      switchMap(({ userId }) =>
+        this.userService.getUserById(userId).pipe(
+          map((user) => UserActions.getUserByIdSuccess({ user })),
+          catchError((error) => of(UserActions.getUserByIdFailure({ error: error.message })))
+        )
+      )
+    );
+  });
+
 }

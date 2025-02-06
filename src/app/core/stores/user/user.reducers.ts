@@ -1,4 +1,4 @@
-import { createFeature, createReducer, on } from "@ngrx/store";
+import {createFeature, createReducer, createSelector, on} from "@ngrx/store";
 import { User } from "../../models/user.model";
 import {UserActions} from "./user.actions";
 
@@ -29,8 +29,25 @@ const userFeature = createFeature({
       ...state,
       error,
       loading: false
-    }))
+    })),
+    on(UserActions.getUserById, (state) => ({
+      ...state,
+      error: null
+    })),
+    on(UserActions.getUserByIdSuccess, (state, { user }) => ({
+      ...state,
+      users: state.users.map(req =>
+        req.id === user.id ? user : req
+      ),
+      error: null
+    })),
+    on(UserActions.getUserByIdFailure, (state, { error }) => ({
+      ...state,
+      error
+    })),
   ),
 });
 
-export const {name: usersFeatureKey, reducer: usersReducer, selectUsers,} = userFeature;
+export const {name: usersFeatureKey, reducer: usersReducer, selectUsers, } = userFeature;
+export const selectUserById = (userId: number) =>
+  createSelector(selectUsers, (users) => users.find((user) => user.id === userId));

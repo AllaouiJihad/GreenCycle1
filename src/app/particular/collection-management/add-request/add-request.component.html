@@ -1,45 +1,64 @@
-<div *ngIf="openPopup" class="modal">
+<div *ngIf="openPopup" class="modal fade show d-block" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="addUserModalLabel">Manage User</h5>
-
-    </div>
-    <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Manage Collection</h5>
+        <button type="button" class="close" (click)="cancel()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 400px; overflow-y: auto; ">
         <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
-          <label for="user">Utilisateur :</label>
-          <select id="user" formControlName="user" required>
-            <option *ngFor="let user of users$| async" [value]="user.id">{{ user.firstName }}</option>
-          </select>
-          <label for="estimatedWeight">Poids estimé (kg) :</label>
-          <input id="estimatedWeight" type="number" formControlName="estimatedWeight" required />
+          <div class="form-group">
+            <label for="user">Utilisateur :</label>
+            <select id="user" class="form-control" formControlName="user" required>
+              <option *ngFor="let user of users$ | async" [value]="user.id">{{ user.firstName }}</option>
+            </select>
+          </div>
 
-          <label for="address">Adresse :</label>
-          <input id="address" type="text" formControlName="address" required />
+          <div class="form-group">
+            <label for="estimatedWeight">Poids estimé (kg) :</label>
+            <input id="estimatedWeight" type="number" class="form-control" formControlName="estimatedWeight" required />
+          </div>
 
-          <label for="city">Ville :</label>
-          <input id="city" type="text" formControlName="city" required />
+          <div class="form-group">
+            <label for="address">Adresse :</label>
+            <input id="address" type="text" class="form-control" formControlName="address" required />
+          </div>
 
-          <label for="collectionDate">Date de collecte :</label>
-          <input id="collectionDate" type="date" formControlName="collectionDate" required />
+          <div class="form-group">
+            <label for="city">Ville :</label>
+            <input id="city" type="text" class="form-control" formControlName="city" required />
+          </div>
 
-          <label for="timeSlot">Créneau horaire :</label>
-          <input id="timeSlot" type="text" formControlName="timeSlot" required />
+          <div class="form-group">
+            <label for="collectionDate">Date de collecte :</label>
+            <input id="collectionDate" type="date" class="form-control" formControlName="collectionDate" required />
+          </div>
 
-          <label for="status">Statut :</label>
-          <select id="status" formControlName="status">
-            <option *ngFor="let status of collectionStatusArray" [value]="status">{{ status }}</option>
-          </select>
+          <div class="form-group">
+            <label for="timeSlot">Créneau horaire :</label>
+            <input id="timeSlot" type="text" class="form-control" formControlName="timeSlot" required />
+          </div>
 
-          <label for="additionalNotes">Notes supplémentaires :</label>
-          <textarea id="additionalNotes" formControlName="additionalNotes"></textarea>
+          <div class="form-group">
+            <label for="status">Statut :</label>
+            <select id="status" class="form-control" formControlName="status">
+              <option *ngFor="let status of collectionStatusArray" [value]="status">{{ status }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalNotes">Notes supplémentaires :</label>
+            <textarea id="additionalNotes" class="form-control" formControlName="additionalNotes"></textarea>
+          </div>
+
           <div class="modal-footer">
-            <button (click)="cancel()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="saveUserButton">Save User</button>
+            <button type="button" class="btn btn-secondary" (click)="cancel()">Close</button>
+            <button type="submit" class="btn btn-primary">Save User</button>
           </div>
         </form>
+      </div>
     </div>
-
   </div>
-</div>
 </div>

@@ -39,20 +39,10 @@
           >
             <i class="fas fa-home"></i>
             <p>Dashboard</p>
-            <span class="caret"></span>
           </a>
-          <div class="collapse" id="dashboard">
-            <ul class="nav nav-collapse">
-              <li>
-                <a href="../../demo1/index.html">
-                  <span class="sub-item">Dashboard 1</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </li>
 
-        <li class="nav-item active submenu">
+        <li class="nav-item submenu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           <a data-bs-toggle="collapse" href="#tables">
             <i class="fas fa-table"></i>
             <p>Tables</p>
@@ -79,6 +69,19 @@
               </li>
             </ul>
           </div>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a
+             routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/profil"
+            class="collapsed"
+            aria-expanded="false"
+          >
+            <i class="fas fa-user-cog"></i>
+            <p>Profil</p>
+          </a>
+
         </li>
 
       </ul>

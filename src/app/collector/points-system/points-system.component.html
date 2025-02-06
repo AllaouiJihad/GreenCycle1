@@ -9,13 +9,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="d-flex justify-content-between">
-                  <div class="card-title">Collections Table</div>
-                  <button class="btn btn-black">
-                        <span class="btn-label">
-                          <i class="fa fa-plus"></i>
-                        </span>
-                    Add Collection
-                  </button>
+                  <div class="card-title">Points System</div>
                 </div>
               </div>
               <div class="card-body">
@@ -27,12 +21,26 @@
                       <th>Address</th>
                       <th>City</th>
                       <th>collection Date</th>
-                      <th>timeSlot</th>
-                      <th>Status</th>
-                      <th>Actions</th>
+                      <th>Items & quantity</th>
+                      <th>Points</th>
+                      <th>Voucher</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <tr *ngFor="let collectionRequest of collectionRequests$ | async">
+                      <td>{{ collectionRequest.id }}</td>
+                      <td>{{ collectionRequest.address }}</td>
+                      <td>{{ collectionRequest.city }}</td>
+                      <td>{{ collectionRequest.collectionDate }}</td>
+                      <td>
+                        <span *ngFor="let item of collectionRequest.items; let last = last">
+                          {{ item.wasteType }} ({{ item.weight }}kg){{ last ? '' : ', ' }}
+                        </span>
+                      </td>
+                      <td>{{ collectionRequest.points }}</td>
+                      <td>{{ collectionRequest.voucher }} dh</td>
+
+                    </tr>
                     </tbody>
                   </table>
                 </div>

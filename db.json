@@ -29,18 +29,14 @@
       "profilePicture": "1737378429576.jpg"
     },
     {
-      "id": "6ba1",
+      "lastName": "chakir",
       "firstName": "Hop",
-      "lastName": "Farley",
       "email": "sykomiho@mailinator.com",
-      "password": "sykomiho@mailinator.com",
-      "address": "",
-      "city": "",
-      "phone": "+1 (648) 414-8256",
+      "phone": "0651867166",
+      "address": "Douar Algouz Iznaguen",
+      "city": "Douar Algouz Iznaguen",
       "birthDate": "2019-06-25",
-      "role": "PARTICULAR",
-      "createdAt": "2025-02-06",
-      "profilePicture": "logo.jpg"
+      "id": "6ba1"
     }
   ],
   "collectionRequests": [

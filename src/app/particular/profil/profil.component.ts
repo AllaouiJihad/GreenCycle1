@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../core/models/user.model';
 import { UserService } from "../../core/services/user/user.service";
-import {SidebarComponent} from "../../layouts/sidebar/sidebar.component";
-import {NavbarComponent} from "../../layouts/navbar/navbar.component";
-import {NgIf} from "@angular/common";
+import { SidebarComponent } from "../../layouts/sidebar/sidebar.component";
+import { NavbarComponent } from "../../layouts/navbar/navbar.component";
+import { NgIf } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-profil',
@@ -13,31 +15,43 @@ import {NgIf} from "@angular/common";
   imports: [
     SidebarComponent,
     NavbarComponent,
-    NgIf
+    NgIf,
+    ReactiveFormsModule
   ]
 })
 export class ProfilComponent implements OnInit {
   user?: User;
+  profileForm!: FormGroup;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private fb: FormBuilder) {}
 
   ngOnInit() {
+    this.initForm();
     this.loadUser();
+  }
+
+  initForm() {
+    this.profileForm = this.fb.group({
+      lastName: ['', Validators.required],
+      firstName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      address: [''],
+      city: [''],
+      birthDate: [''],
+    });
   }
 
   loadUser() {
     const userId = localStorage.getItem("userId");
 
-    console.log("Valeur brute de userId dans localStorage:", userId);
-
     if (userId) {
-      console.log("User ID récupéré:", userId);
-
       this.userService.getUserById(userId).subscribe(
-        user => {
+        (user) => {
           this.user = user;
+          this.profileForm.patchValue(user);
         },
-        error => {
+        (error) => {
           console.error("Erreur lors de la récupération de l'utilisateur :", error);
         }
       );
@@ -45,4 +59,20 @@ export class ProfilComponent implements OnInit {
       console.warn("Aucun ID utilisateur trouvé dans le localStorage.");
     }
   }
+
+  updateProfile() {
+    if (this.profileForm.valid && this.user && this.user.id !== undefined) {
+      this.userService.updateUser(this.user.id, this.profileForm.value).subscribe(
+        (updatedUser) => {
+          console.log("Profil mis jour avec succes :", updatedUser);
+        },
+        (error) => {
+          console.error("Erreur:", error);
+        }
+      );
+    } else {
+      console.warn("ID utilisateur invalide.");
+    }
+  }
+
 }

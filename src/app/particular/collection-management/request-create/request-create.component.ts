@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SidebarComponent} from "../../../layouts/sidebar/sidebar.component";
-import {Observable} from "rxjs";
+import {Observable, take} from "rxjs";
 import {CollectionRequest} from "../../../core/models/collection-request.model";
 import {Store} from "@ngrx/store";
 import {CollectionRequestActions} from "../../../core/stores/collectionRequest/collection-request.actions";
@@ -25,8 +25,11 @@ import {AddRequestComponent} from "../add-request/add-request.component";
 export class RequestCreateComponent implements OnInit{
   showModal = false;
   collectionRequests$: Observable<CollectionRequest[]>;
+  selectedCollectionRequest: CollectionRequest | null = null;
+
   constructor(private store: Store) {
     this.collectionRequests$ = this.store.select(selectCollectionRequests);
+
   }
   ngOnInit() {
     this.store.dispatch(CollectionRequestActions.getAllCollectionRequests());
@@ -34,6 +37,7 @@ export class RequestCreateComponent implements OnInit{
   closePopup(): void {
     console.log('close modal');
     this.showModal = false;
+    this.selectedCollectionRequest = null;
   }
 
   openPopup() : void{
@@ -42,6 +46,18 @@ export class RequestCreateComponent implements OnInit{
   }
   deleteCollectionRequest(collectionRequestId: number) {
     this.store.dispatch(CollectionRequestActions.deleteCollectionRequestById({ collectionRequestId }));
+  }
+  editCollectionRequest(collectionRequestId: number): void {
+    this.store.dispatch(CollectionRequestActions.getAllCollectionRequests());
+    this.store.select(selectCollectionRequests).pipe(
+      take(1)
+    ).subscribe(collectionRequests => {
+      const collectionRequest = collectionRequests.find(req => req.id === collectionRequestId);
+      if (collectionRequest) {
+        this.selectedCollectionRequest = collectionRequest;
+        this.openPopup();
+      }
+    });
   }
 
 

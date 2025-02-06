@@ -10,7 +10,7 @@ export enum CollectionStatus {
 }
 
 export interface CollectionRequest {
-  id?: number;
+  id?: number ;
   user?: User;
   estimatedWeight: number;
   address: string;

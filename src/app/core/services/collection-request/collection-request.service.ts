@@ -22,4 +22,10 @@ export class CollectionRequestService {
     return this.http.delete(`${this.api}/${collectionRequestId}`);
   }
 
+  updateCollectionRequest(collectionRequest: CollectionRequest, collectionRequestId: number): Observable<CollectionRequest> {
+    return this.http.put<CollectionRequest>(`${this.api}/${collectionRequestId}`, collectionRequest);
+  }
+  getCollectionRequestById(collectionRequestId: number): Observable<CollectionRequest> {
+    return this.http.get<CollectionRequest>(`${this.api}/${collectionRequestId}`);
+  }
 }

@@ -19,5 +19,9 @@ export const CollectionRequestActions = createActionGroup({
     'Delete CollectionRequest By Id ': props<{collectionRequestId: number}>(),
     'Delete CollectionRequest By Id Success':props<{collectionRequestId: number}>(),
     'Delete CollectionRequest By Id Failure': props<{ error: string }>(),
+
+    'Update CollectionRequest': props<{ collectionRequest: CollectionRequest }>(),
+    'Update CollectionRequest Success': props<{ collectionRequest: CollectionRequest }>(),
+    'Update CollectionRequest Failure': props<{ error: string }>(),
   }
 });

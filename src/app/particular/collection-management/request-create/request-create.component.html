@@ -41,7 +41,7 @@
                       <td>{{ collectionRequest.timeSlot }}</td>
                       <td>{{ collectionRequest.status }}</td>
                       <td class="align-middle text-center">
-                        <button class="text-primary bg-body border-0" >
+                        <button class="text-primary bg-body border-0" (click)="collectionRequest.id?editCollectionRequest(collectionRequest.id) : null">
                           <i class="far fa-edit"></i>
                         </button>
                         <button class="text-danger bg-body border-0" (click)="collectionRequest.id?  deleteCollectionRequest(collectionRequest.id) : null">
@@ -63,6 +63,7 @@
 </div>
 <app-add-request
   *ngIf="showModal"
+  [initialRequestData]="selectedCollectionRequest"
   (openPopup)="openPopup()"
   (closePopup)="closePopup()"
 ></app-add-request>

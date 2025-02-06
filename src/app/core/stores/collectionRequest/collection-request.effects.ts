@@ -49,7 +49,29 @@ export class CollectionRequestEffects {
     );
   });
 
+  loadCollectionRequestById$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CollectionRequestActions.getCollectionRequestById),
+      switchMap(({ collectionRequestId }) =>
+        this.collectionRequestService.getCollectionRequestById(collectionRequestId).pipe(
+          map((collectionRequest) => CollectionRequestActions.getCollectionRequestByIdSuccess({ collectionRequest })),
+          catchError((error) => of(CollectionRequestActions.getCollectionRequestByIdFailure({ error: error.message })))
+        )
+      )
+    );
+  });
 
-
-
+  updateCollectionRequest$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CollectionRequestActions.updateCollectionRequest),
+      switchMap(({ collectionRequest }) => {
+        const collectionRequestId = collectionRequest.id ?? 0;
+        return this.collectionRequestService.updateCollectionRequest(collectionRequest, collectionRequestId).pipe(
+          map((response) => CollectionRequestActions.updateCollectionRequestSuccess({ collectionRequest: response })),
+          tap(() => this.router.navigate(['/demande'])),
+          catchError((error) => of(CollectionRequestActions.updateCollectionRequestFailure({ error: error.message })))
+        );
+      })
+    );
+  });
 }

@@ -769,19 +769,146 @@
       "id": "7549",
       "email": "tiged@mailinator.com",
       "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "5985",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "2c3f",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "eedc",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "ee13",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "414c",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "e295",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "3cd5",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "334b",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "3f76",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "d19d",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "fcb9",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "9ab4",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "453f",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "b836",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "5f94",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.c*"
+    },
+    {
+      "id": "9db3",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "1d68",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "53a9",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "02c2",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "1536",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "16b1",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "1b51",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
+    },
+    {
+      "id": "3a82",
+      "email": "tiged@mailinator.com",
+      "password": "tiged@mailinator.com"
     }
   ],
   "collectionRequests": [
     {
-      "id": "3f34",
-      "user": "de35",
-      "estimatedWeight": 25,
-      "address": "Assumenda dolor cumq",
-      "city": "Et libero nisi venia",
-      "collectionDate": "1998-05-23",
-      "timeSlot": "Illo aut do voluptat",
+      "id": "24f7",
+      "user": "b7e7",
+      "estimatedWeight": 80,
+      "address": "Voluptates doloremqu",
+      "city": "Animi nihil tempori",
+      "collectionDate": "1990-05-18",
+      "timeSlot": "Duis non qui eu ea o",
+      "status": "IN-PROGRESS",
+      "additionalNotes": "Vitae velit officii",
+      "items": null
+    },
+    {
+      "id": "8689",
+      "user": "e4df",
+      "estimatedWeight": 92,
+      "address": "Ut excepteur qui lor",
+      "city": "Modi lorem est sit ",
+      "collectionDate": "1976-01-14",
+      "timeSlot": "Ad corrupti error n",
       "status": "REJECTED",
-      "additionalNotes": "Eaque et reprehender",
+      "additionalNotes": "Anim repudiandae mag",
       "items": null
     }
   ],

@@ -56,8 +56,39 @@ export const collectionRequestsFeature = createFeature({
     on(CollectionRequestActions.deleteCollectionRequestByIdFailure, (state, {error}) => ({
       ...state,
       error
-    }))
+    })),
+    on(CollectionRequestActions.getCollectionRequestById, (state) => ({
+      ...state,
+      error: null
+    })),
+    on(CollectionRequestActions.getCollectionRequestByIdSuccess, (state, { collectionRequest }) => ({
+      ...state,
+      collectionRequests: state.collectionRequests.map(req =>
+        req.id === collectionRequest.id ? collectionRequest : req
+      ),
+      error: null
+    })),
+    on(CollectionRequestActions.getCollectionRequestByIdFailure, (state, { error }) => ({
+      ...state,
+      error
+    })),
+
+    on(CollectionRequestActions.updateCollectionRequest, (state) => ({
+      ...state,
+      error: null
+    })),
+    on(CollectionRequestActions.updateCollectionRequestSuccess, (state, { collectionRequest }) => ({
+      ...state,
+      collectionRequests: state.collectionRequests.map(req =>
+        req.id === collectionRequest.id ? collectionRequest : req
+      ),
+      error: null
+    })),
+    on(CollectionRequestActions.updateCollectionRequestFailure, (state, { error }) => ({
+      ...state,
+      error
+    })),
   )
 });
 
-export const {name: collectionRequestsFeatureKey, reducer: collectionRequestReducer , selectCollectionRequests} = collectionRequestsFeature;
+export const {name: collectionRequestsFeatureKey, reducer: collectionRequestReducer , selectCollectionRequests } = collectionRequestsFeature;

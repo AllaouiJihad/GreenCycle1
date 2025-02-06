@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output , Input} from '@angular/core';
 import { Store } from "@ngrx/store";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { Observable } from "rxjs";
@@ -8,7 +8,7 @@ import { UserActions } from "../../../core/stores/user/user.actions";
 import { createCollectionRequestValidator } from "../../../core/validators/collection-request";
 import { CollectionRequestActions } from "../../../core/stores/collectionRequest/collection-request.actions";
 import {AsyncPipe, NgFor, NgIf} from "@angular/common";
-import { CollectionStatus } from "../../../core/models/collection-request.model";
+import {CollectionRequest, CollectionStatus} from "../../../core/models/collection-request.model";
 
 @Component({
   selector: 'app-add-request',
@@ -25,6 +25,7 @@ import { CollectionStatus } from "../../../core/models/collection-request.model"
 export class AddRequestComponent implements OnInit {
   @Output() closePopup = new EventEmitter<void>();
   @Output() openPopup = new EventEmitter<void>();
+  @Input() initialRequestData: CollectionRequest | null = null;
 
   users$: Observable<User[]>;
   requestForm!: FormGroup;
@@ -39,11 +40,15 @@ export class AddRequestComponent implements OnInit {
   ngOnInit(): void {
     console.log('ok ca marche');
     this.store.dispatch(UserActions.loadUsers());
+    if (this.initialRequestData) {
+      this.requestForm.patchValue(this.initialRequestData);
+    }
   }
 
   onSubmit(): void {
     const formValues = this.requestForm.getRawValue();
-    const collectionRequest = {
+    const collectionRequest: CollectionRequest = {
+      id: this.initialRequestData?.id,
       user: formValues.user,
       estimatedWeight: formValues.estimatedWeight,
       address: formValues.address,
@@ -54,15 +59,22 @@ export class AddRequestComponent implements OnInit {
       additionalNotes: formValues.additionalNotes,
       items: formValues.items,
     };
-    this.store.dispatch(CollectionRequestActions.addNewCollectionRequest({ collectionRequest }));
-    this.cancel();
-  }
 
-  open(): void {
+    if (this.initialRequestData) {
+      this.store.dispatch(CollectionRequestActions.updateCollectionRequest({collectionRequest}));
+    } else {
+      this.store.dispatch(CollectionRequestActions.addNewCollectionRequest({collectionRequest}));
+    }
+    this.requestForm.reset();
+    this.cancel();
+    this.initialRequestData = null;
+  }
+    open(): void {
     this.openPopup.emit();
   }
 
   cancel(): void {
+    console.log('cancel method called');
     this.closePopup.emit();
   }
 }

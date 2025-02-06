@@ -11,6 +11,6 @@ export function createCollectionRequestValidator(fb: FormBuilder) {
     timeSlot: ['', Validators.required],
     status: [CollectionStatus.PENDING, Validators.required],
     additionalNotes: [''],
-    items: [],
+    items: fb.array([])
   })
 }

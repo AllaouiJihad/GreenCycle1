@@ -47,7 +47,28 @@
               <option *ngFor="let status of collectionStatusArray" [value]="status">{{ status }}</option>
             </select>
           </div>
+          <div formArrayName="items">
+            <div
+              *ngFor="let item of items.controls; let i = index"
+              [formGroupName]="i"
+              class="form-group"
+            >
+              <label for="wasteType">Type de déchet :</label>
+              <select id="wasteType" class="form-control" formControlName="wasteType" required>
+                <option *ngFor="let type of itemTypes" [value]="type">
+                  {{ type }}
+                </option>
+              </select>
 
+              <label for="weight">Poids (kg) :</label>
+              <input id="weight" type="number" class="form-control" formControlName="weight" required />
+            </div>
+          </div>
+
+          <!-- Bouton pour ajouter un nouvel item -->
+          <button type="button" (click)="addItem()" class="btn btn-secondary">
+            Ajouter un item
+          </button>
           <div class="form-group">
             <label for="additionalNotes">Notes supplémentaires :</label>
             <textarea id="additionalNotes" class="form-control" formControlName="additionalNotes"></textarea>

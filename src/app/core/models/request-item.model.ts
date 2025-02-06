@@ -9,9 +9,8 @@ export enum ItemType {
 
 export interface RequestItem {
   id: number;
-  requestId: CollectionRequest;
+  //requestId: CollectionRequest;
   wasteType: ItemType;
   weight: number;
-  photo?: string;
-  createdAt: Date;
+  //createdAt: Date;
 }

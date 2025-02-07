@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
 import {User} from "../../../core/models/user.model";
 import {selectUsers} from "../../../core/stores/user/user.reducers";
@@ -15,7 +15,6 @@ import {ItemType, RequestItem} from "../../../core/models/request-item.model";
   selector: 'app-add-request',
   standalone: true,
   imports: [
-    AsyncPipe,
     NgFor,
     NgIf,
     ReactiveFormsModule
@@ -68,7 +67,7 @@ export class AddRequestComponent implements OnInit {
     const collectionRequest: CollectionRequest = {
       id: this.initialRequestData?.id,
       user: formValues.user,
-      estimatedWeight: formValues.estimatedWeight,
+      estimatedWeight: this.getTotalWeight(),
       address: formValues.address,
       city: formValues.city,
       collectionDate: formValues.collectionDate,
@@ -104,8 +103,14 @@ export class AddRequestComponent implements OnInit {
   addItem(item?: RequestItem): void {
     const itemFormGroup = this.fb.group({
       wasteType: [item?.wasteType || '', Validators.required],
-      weight: [item?.weight || 0, [Validators.required, Validators.min(0)]],
+      weight: [item?.weight || 1, [Validators.required, Validators.min(1)]],
     });
     this.items.push(itemFormGroup);
+  }
+
+  getTotalWeight(): number {
+    return this.items.controls.reduce((sum, control) => {
+      return sum + (control.get('weight')?.value || 0);
+    }, 0);
   }
 }

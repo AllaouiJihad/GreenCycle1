@@ -125,6 +125,36 @@
           "weight": 85
         }
       ]
+    },
+    {
+      "id": "6b8e",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "Douar Algouz Iznaguen",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 10,
+      "address": "Velit fuga Esse et",
+      "city": "Ab ullam quae autem ",
+      "collectionDate": "2004-07-07",
+      "timeSlot": "12:31",
+      "status": "PENDING",
+      "additionalNotes": "Aut modi id aute est",
+      "items": [
+        {
+          "wasteType": "PAPER",
+          "weight": 8
+        },
+        {
+          "wasteType": "PLASTIC",
+          "weight": 2
+        }
+      ]
     }
   ],
   "pointsSystems": [],

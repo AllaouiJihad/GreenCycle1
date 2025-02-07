@@ -50,6 +50,7 @@ export class ProfilComponent implements OnInit {
         (user) => {
           this.user = user;
           this.profileForm.patchValue(user);
+          this.userService.setUser(user);
         },
         (error) => {
           console.error("Erreur lors de la récupération de l'utilisateur :", error);

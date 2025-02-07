@@ -320,17 +320,14 @@
             href="#"
             aria-expanded="false"
           >
-            <div class="avatar-sm">
-              <img
-                src="../assets/img/profile.jpg"
-                alt="..."
-                class="avatar-img rounded-circle"
-              />
+            <div class="mt-2"style="width: 2rem ; height: 2rem" >
+              <span class="avatar-title rounded-circle border border-white"style="width: 80% ; height: 80%; font-size: 12px">
+                {{ (user?.lastName?.charAt(0) || '') + (user?.firstName?.charAt(0) || '') | uppercase }}
+              </span>
             </div>
-            <span class="profile-username">
-                      <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
-                    </span>
+            <span class="fw-bold mx-1">{{ user?.lastName }}</span>
+            <span class="fw-bold"> {{ user?.firstName }} </span>
+
           </a>
           <ul class="dropdown-menu dropdown-user animated fadeIn">
             <div class="dropdown-user-scroll scrollbar-outer">

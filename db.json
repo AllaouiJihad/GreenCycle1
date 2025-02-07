@@ -53,18 +53,6 @@
       "items": null
     },
     {
-      "id": "8689",
-      "user": "e4df",
-      "estimatedWeight": 92,
-      "address": "Ut excepteur qui lor",
-      "city": "Modi lorem est sit ",
-      "collectionDate": "1976-01-14",
-      "timeSlot": "Ad corrupti error n",
-      "status": "REJECTED",
-      "additionalNotes": "Anim repudiandae mag",
-      "items": null
-    },
-    {
       "id": "3afa",
       "user": "3cb6",
       "estimatedWeight": 84,
@@ -82,6 +70,23 @@
         {
           "wasteType": "PLASTIC",
           "weight": 69
+        }
+      ]
+    },
+    {
+      "id": "bfd2",
+      "user": "be7e",
+      "estimatedWeight": 22,
+      "address": "Ut vero exercitation",
+      "city": "Nostrud similique in",
+      "collectionDate": "2005-11-16",
+      "timeSlot": "Esse minima elit li",
+      "status": "PENDING",
+      "additionalNotes": "Fugit et minima qua",
+      "items": [
+        {
+          "wasteType": "PAPER",
+          "weight": 77
         }
       ]
     }

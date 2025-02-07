@@ -27,11 +27,20 @@
 
           <div class="form-group">
             <label for="collectionDate">Date de collecte :</label><span class="required-indicator">*</span>
-            <input id="collectionDate" type="date" class="form-control" formControlName="collectionDate" required />
-            <div *ngIf="requestForm.controls['collectionDate'].invalid && requestForm.controls['collectionDate'].touched" class="text-danger">
+            <input id="collectionDate" type="date" class="form-control"
+                   formControlName="collectionDate"
+                   [min]="today"
+                   required />
+            <div *ngIf="requestForm.controls['collectionDate'].hasError('min') && requestForm.controls['collectionDate'].touched"
+                 class="text-danger">
+              La date ne peut pas être dans le passé.
+            </div>
+            <div *ngIf="requestForm.controls['collectionDate'].hasError('required') && requestForm.controls['collectionDate'].touched"
+                 class="text-danger">
               La date est requise.
             </div>
           </div>
+
 
           <div class="form-group">
             <label for="timeSlot">Créneau horaire :</label><span class="required-indicator">*</span>

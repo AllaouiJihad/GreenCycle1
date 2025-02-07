@@ -10,12 +10,13 @@ import {
 import {CollectionStatus} from "../models/collection-request.model";
 
 export function createCollectionRequestValidator(fb: FormBuilder) {
+  const today: string = new Date().toISOString().split('T')[0];
   return fb.group({
     user: [null, Validators.required],
     estimatedWeight: [null, [Validators.required, Validators.min(1)]],
     address: ['', Validators.required],
     city: ['', Validators.required],
-    collectionDate: ['', Validators.required],
+    collectionDate: ['', [Validators.required, minDateValidator(today)]],
     timeSlot: ['', [Validators.required, timeSlotValidator]],
     status: [CollectionStatus.PENDING, Validators.required],
     additionalNotes: [''],
@@ -44,5 +45,11 @@ export function validateTotalWeight(): ValidatorFn {
     }, 0);
 
     return totalWeight > 10 ? { maxWeightExceeded: true } : null;
+  };
+}
+export function minDateValidator(minDate: string): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const dateValue = control.value;
+    return dateValue && dateValue < minDate ? {'min': true} : null;
   };
 }

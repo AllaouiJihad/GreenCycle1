@@ -97,36 +97,6 @@
       ]
     },
     {
-      "id": "6241",
-      "user": {
-        "lastName": "chakir",
-        "firstName": "Hop",
-        "email": "sykomiho@mailinator.com",
-        "phone": "0651867166",
-        "address": "Douar Algouz Iznaguen",
-        "city": "Douar Algouz Iznaguen",
-        "birthDate": "2019-06-25",
-        "id": "6ba1"
-      },
-      "estimatedWeight": 77,
-      "address": "Et enim aut exceptur",
-      "city": "In natus rerum dolor",
-      "collectionDate": "1981-06-27",
-      "timeSlot": "Do illo cum occaecat",
-      "status": "PENDING",
-      "additionalNotes": "Magni neque cillum e",
-      "items": [
-        {
-          "wasteType": "GLASS",
-          "weight": 22
-        },
-        {
-          "wasteType": "PLASTIC",
-          "weight": 85
-        }
-      ]
-    },
-    {
       "id": "6b8e",
       "user": {
         "lastName": "chakir",

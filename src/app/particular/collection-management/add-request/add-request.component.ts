@@ -23,6 +23,7 @@ import {ItemType, RequestItem} from "../../../core/models/request-item.model";
   styleUrls: ['./add-request.component.css']
 })
 export class AddRequestComponent implements OnInit {
+  today: string = new Date().toISOString().split('T')[0];
   @Output() closePopup = new EventEmitter<void>();
   @Output() openPopup = new EventEmitter<void>();
   @Input() initialRequestData: CollectionRequest | null = null;

@@ -48,11 +48,23 @@ export class AddRequestComponent implements OnInit {
       const items = this.initialRequestData.items ?? [];
       items.forEach(item => this.addItem(item));
     }
+    const userString = localStorage.getItem('user');
+    let currentUser: User | null = null;
+    if (userString) {
+      try {
+        currentUser = JSON.parse(userString);
+      } catch (error) {
+        console.error("Erreur lors du parsing de l'utilisateur stocké", error);
+      }
+    }
+    if (currentUser) {
+      this.requestForm.get('user')?.setValue(currentUser);
+    }
+
   }
 
   onSubmit(): void {
     const formValues = this.requestForm.getRawValue();
-
     const collectionRequest: CollectionRequest = {
       id: this.initialRequestData?.id,
       user: formValues.user,

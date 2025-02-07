@@ -8,13 +8,12 @@ import {User} from "../../models/user.model";
   providedIn: 'root'
 })
 export class UserService {
-  private userSubject = new BehaviorSubject<User | null>(null);
+  private userSubject = new BehaviorSubject<any>(null);
   user$: Observable<User | null> = this.userSubject.asObservable();
 
   private api = `${environment.apiUrl}/users`;
 
   constructor(private http: HttpClient) {
-
   }
 
   getUsers() : Observable<User[]>{
@@ -34,5 +33,9 @@ export class UserService {
     this.userSubject.next(user);
   }
 
+  logout(): void {
+    localStorage.removeItem('userId');
+    localStorage.removeItem('user');
+  }
 
 }

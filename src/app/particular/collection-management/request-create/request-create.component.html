@@ -34,7 +34,7 @@
                     </thead>
                     <tbody>
                     <tr *ngFor="let collectionRequest of collectionRequests$ | async">
-                      <td>{{ collectionRequest.id }}</td>
+                      <td>{{ collectionRequest.user?.firstName }} {{ collectionRequest.user?.lastName }}</td>
                       <td>{{ collectionRequest.address }}</td>
                       <td>{{ collectionRequest.city }}</td>
                       <td>{{ collectionRequest.collectionDate }}</td>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../core/services/user/user.service";
 import {User} from "../../core/models/user.model";
 import {UpperCasePipe} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,8 @@ import {UpperCasePipe} from "@angular/common";
 })
 export class NavbarComponent implements OnInit{
   user?: User | null;
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,
+              private router: Router) {}
 
   ngOnInit() {
     this.loadUser();
@@ -35,6 +37,11 @@ export class NavbarComponent implements OnInit{
       console.warn("Aucun ID utilisateur trouvé dans le localStorage.");
     }
   }
-
+  logout(): void {
+    console.log('Logging out...');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('user');
+    this.router.navigate(['/']);
+  }
 
 }

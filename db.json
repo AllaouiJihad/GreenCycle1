@@ -41,52 +41,88 @@
   ],
   "collectionRequests": [
     {
-      "id": "24f7",
-      "user": "b7e7",
-      "estimatedWeight": 80,
-      "address": "Voluptates doloremqu",
-      "city": "Animi nihil tempori",
-      "collectionDate": "1990-05-18",
-      "timeSlot": "Duis non qui eu ea o",
-      "status": "IN-PROGRESS",
-      "additionalNotes": "Vitae velit officii",
-      "items": null
-    },
-    {
-      "id": "3afa",
-      "user": "3cb6",
-      "estimatedWeight": 84,
-      "address": "Aute consequatur sed",
-      "city": "Aut eius enim commod",
-      "collectionDate": "2023-11-13",
-      "timeSlot": "Eum vel voluptas qua",
+      "id": "1590",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "Douar Algouz Iznaguen",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 95,
+      "address": "Earum quibusdam sint",
+      "city": "Nemo iure necessitat",
+      "collectionDate": "2013-06-28",
+      "timeSlot": "Commodi quidem paria",
       "status": "OCCUPIED",
-      "additionalNotes": "Molestiae accusantiu",
+      "additionalNotes": "Tempore quasi ut ha",
       "items": [
         {
-          "wasteType": "METAL",
-          "weight": 20
-        },
-        {
           "wasteType": "PLASTIC",
-          "weight": 69
+          "weight": 36
         }
       ]
     },
     {
-      "id": "bfd2",
-      "user": "be7e",
-      "estimatedWeight": 22,
-      "address": "Ut vero exercitation",
-      "city": "Nostrud similique in",
-      "collectionDate": "2005-11-16",
-      "timeSlot": "Esse minima elit li",
-      "status": "PENDING",
-      "additionalNotes": "Fugit et minima qua",
+      "id": "52e4",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "Douar Algouz Iznaguen",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 99,
+      "address": "Necessitatibus minus",
+      "city": "Velit ad tenetur al",
+      "collectionDate": "1995-12-18",
+      "timeSlot": "Velit harum reprehen",
+      "status": "VALIDATED",
+      "additionalNotes": "Quidem enim delectus",
       "items": [
         {
+          "wasteType": "PLASTIC",
+          "weight": 52
+        },
+        {
           "wasteType": "PAPER",
-          "weight": 77
+          "weight": 74
+        }
+      ]
+    },
+    {
+      "id": "6241",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "Douar Algouz Iznaguen",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 77,
+      "address": "Et enim aut exceptur",
+      "city": "In natus rerum dolor",
+      "collectionDate": "1981-06-27",
+      "timeSlot": "Do illo cum occaecat",
+      "status": "PENDING",
+      "additionalNotes": "Magni neque cillum e",
+      "items": [
+        {
+          "wasteType": "GLASS",
+          "weight": 22
+        },
+        {
+          "wasteType": "PLASTIC",
+          "weight": 85
         }
       ]
     }

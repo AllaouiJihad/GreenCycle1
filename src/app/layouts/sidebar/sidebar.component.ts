@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive} from "@angular/router";
-import {NgClass} from "@angular/common";
+import { Component, OnInit } from '@angular/core';
+import { RouterLink, RouterLinkActive } from "@angular/router";
+import { User } from "../../core/models/user.model";
+import { UserService } from "../../core/services/user/user.service";
+import { Role } from "../../core/models/user.model";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-sidebar',
@@ -8,15 +11,36 @@ import {NgClass} from "@angular/common";
   imports: [
     RouterLink,
     RouterLinkActive,
-    NgClass
+    NgIf,
   ],
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'] // Corrige ici pour `styleUrls`
+  styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
-  isSidebarActive = false;
-  toggleSidebar() {
-    console.log("SidebarComponent");
-    this.isSidebarActive = !this.isSidebarActive;
+export class SidebarComponent implements OnInit {
+  user?: User | null;
+  isCollector: boolean = false;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.loadUser();
+  }
+
+  loadUser() {
+    const userId = localStorage.getItem("userId");
+
+    if (userId) {
+      this.userService.getUserById(userId).subscribe(
+        (user) => {
+          this.user = user;
+          this.isCollector = user.role === Role.COLLECTOR;
+        },
+        (error) => {
+          console.error("Erreur lors de la récupération de l'utilisateur :", error);
+        }
+      );
+    } else {
+      console.warn("Aucun ID utilisateur trouvé dans le localStorage.");
+    }
   }
 }

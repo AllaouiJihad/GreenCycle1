@@ -55,13 +55,13 @@
                   <span class="sub-item">Collections</span>
                 </a>
               </li>
-              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isCollector">
                 <a routerLink="/request-list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                   <span class="sub-item">Validate Request</span>
                 </a>
               </li>
 
-              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="isCollector">
                 <a routerLink="/system-points" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                   <span class="sub-item">Points System</span>
                 </a>

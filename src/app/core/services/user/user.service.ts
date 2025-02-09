@@ -33,9 +33,5 @@ export class UserService {
     this.userSubject.next(user);
   }
 
-  logout(): void {
-    localStorage.removeItem('userId');
-    localStorage.removeItem('user');
-  }
 
 }

@@ -6,6 +6,7 @@ import { SidebarComponent } from "../../layouts/sidebar/sidebar.component";
 import { NavbarComponent } from "../../layouts/navbar/navbar.component";
 import { NgIf } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profil',
@@ -23,7 +24,8 @@ export class ProfilComponent implements OnInit {
   user?: User;
   profileForm!: FormGroup;
 
-  constructor(private userService: UserService, private fb: FormBuilder) {}
+  constructor(private userService: UserService, private fb: FormBuilder,
+              private router : Router) {}
 
   ngOnInit() {
     this.initForm();
@@ -75,5 +77,28 @@ export class ProfilComponent implements OnInit {
       console.warn("ID utilisateur invalide.");
     }
   }
+  deleteProfile() {
+    if (confirm("Êtes-vous sûr de vouloir supprimer votre profil ? Cette action est irréversible !")) {
+      const userId = this.user?.id;
+
+      if (userId !== undefined) {
+        this.userService.deleteUser(userId).subscribe(
+          () => {
+            alert("Profil supprimé avec succès.");
+            console.log("Utilisateur supprimé avec succès.");
+            this.router.navigate(['/register']);
+          },
+          (error) => {
+            console.error("Erreur lors de la suppression de l'utilisateur :", error);
+            alert("Une erreur est survenue lors de la suppression du profil.");
+          }
+        );
+      } else {
+        console.warn("Impossible de supprimer : ID utilisateur invalide.");
+        alert("ID utilisateur invalide.");
+      }
+    }
+  }
+
 
 }

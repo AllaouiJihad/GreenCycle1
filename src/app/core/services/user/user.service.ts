@@ -32,6 +32,9 @@ export class UserService {
   setUser(user: User) {
     this.userSubject.next(user);
   }
+  deleteUser(userId: string | number): Observable<void> {
+    return this.http.delete<void>(`${this.api}/${userId}`);
+  }
 
 
 }

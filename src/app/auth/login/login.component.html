@@ -6,7 +6,9 @@
       <hr class="d-inline-block w-25">
     </div>
     <p class="text-center text-muted">Enter your credentials to access your account.</p>
-
+    <div *ngIf="errorMessage$ | async as errorMessage" class="text-center text-danger">
+      {{ errorMessage }}
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>

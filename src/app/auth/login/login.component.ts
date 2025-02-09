@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {Store} from "@ngrx/store";
+import {select, Store} from "@ngrx/store";
 import {createLoginValidator} from "../../core/validators/login-validators";
 import {LoginRequest} from "../../core/models/login-request.model";
 import { AuthActions } from "../../core/stores/auth/auth.actions";
-import {NgIf} from "@angular/common";
+import {AsyncPipe, NgIf} from "@angular/common";
+import {Observable} from "rxjs";
+import {selectAuthError} from "../../core/stores/auth/auth.selectors";
 
 @Component({
   selector: 'app-login',
@@ -13,16 +15,20 @@ import {NgIf} from "@angular/common";
   imports: [
     ReactiveFormsModule,
     NgIf,
-    RouterLink
+    RouterLink,
+    AsyncPipe
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  errorMessage$!: Observable<string | null>;
+
   constructor(private store: Store, private fb: FormBuilder) {}
   ngOnInit() {
     this.loginForm = createLoginValidator(this.fb);
+    this.errorMessage$ = this.store.pipe(select(selectAuthError));
   }
   onSubmit() {
     const formValues = this.loginForm.getRawValue();

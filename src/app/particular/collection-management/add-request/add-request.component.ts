@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators} from "@angular/forms";
-import {Observable} from "rxjs";
+import {Observable, take} from "rxjs";
 import {User} from "../../../core/models/user.model";
 import {selectUsers} from "../../../core/stores/user/user.reducers";
 import {UserActions} from "../../../core/stores/user/user.actions";
@@ -10,6 +10,7 @@ import {CollectionRequestActions} from "../../../core/stores/collectionRequest/c
 import {AsyncPipe, NgFor, NgIf} from "@angular/common";
 import {CollectionRequest, CollectionStatus} from "../../../core/models/collection-request.model";
 import {ItemType, RequestItem} from "../../../core/models/request-item.model";
+import {selectCollectionRequests} from "../../../core/stores/collectionRequest/collection-request.reducer";
 
 @Component({
   selector: 'app-add-request',
@@ -64,29 +65,42 @@ export class AddRequestComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const formValues = this.requestForm.getRawValue();
-    const collectionRequest: CollectionRequest = {
-      id: this.initialRequestData?.id,
-      user: formValues.user,
-      estimatedWeight: this.getTotalWeight(),
-      address: formValues.address,
-      city: formValues.city,
-      collectionDate: formValues.collectionDate,
-      timeSlot: formValues.timeSlot,
-      status: CollectionStatus.PENDING,
-      additionalNotes: formValues.additionalNotes,
-      items: formValues.items || []
-    };
+    this.store.select(selectCollectionRequests).pipe(take(1)).subscribe(collectionRequests => {
+      const activeRequests = collectionRequests.filter(req =>
+        req.user?.id === this.requestForm.get('user')?.getRawValue().id &&
+        req.status !== CollectionStatus.VALIDATED &&
+        req.status !== CollectionStatus.REJECTED
+      );
 
-    if (this.initialRequestData) {
-      this.store.dispatch(CollectionRequestActions.updateCollectionRequest({ collectionRequest }));
-    } else {
-      this.store.dispatch(CollectionRequestActions.addNewCollectionRequest({ collectionRequest }));
-    }
+      if (activeRequests.length >= 3) {
+        alert("Vous avez déjà 3 demandes en attente. Veuillez attendre leur traitement avant d'en créer une nouvelle.");
+        return;
+      }
 
-    this.requestForm.reset();
-    this.cancel();
-    this.initialRequestData = null;
+      const formValues = this.requestForm.getRawValue();
+      const collectionRequest: CollectionRequest = {
+        id: this.initialRequestData?.id,
+        user: formValues.user,
+        estimatedWeight: this.getTotalWeight(),
+        address: formValues.address,
+        city: formValues.city,
+        collectionDate: formValues.collectionDate,
+        timeSlot: formValues.timeSlot,
+        status: CollectionStatus.PENDING,
+        additionalNotes: formValues.additionalNotes,
+        items: formValues.items || []
+      };
+
+      if (this.initialRequestData) {
+        this.store.dispatch(CollectionRequestActions.updateCollectionRequest({ collectionRequest }));
+      } else {
+        this.store.dispatch(CollectionRequestActions.addNewCollectionRequest({ collectionRequest }));
+      }
+
+      this.requestForm.reset();
+      this.cancel();
+      this.initialRequestData = null;
+    });
   }
 
   open(): void {

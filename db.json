@@ -37,6 +37,20 @@
       "city": "Douar Algouz Iznaguen",
       "birthDate": "2019-06-25",
       "id": "6ba1"
+    },
+    {
+      "id": "24d0",
+      "firstName": "Odessa",
+      "lastName": "Powers",
+      "email": "cicadi@mailinator.com",
+      "password": "cicadi@mailinator.com",
+      "address": "",
+      "city": "",
+      "phone": "+1 (183) 617-1078",
+      "birthDate": "1972-05-26",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-08",
+      "profilePicture": null
     }
   ],
   "collectionRequests": [
@@ -123,6 +137,92 @@
         {
           "wasteType": "PLASTIC",
           "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "5294",
+      "user": {
+        "id": "24d0",
+        "firstName": "Odessa",
+        "lastName": "Powers",
+        "email": "cicadi@mailinator.com",
+        "password": "cicadi@mailinator.com",
+        "address": "",
+        "city": "",
+        "phone": "+1 (183) 617-1078",
+        "birthDate": "1972-05-26",
+        "role": "PARTICULAR",
+        "createdAt": "2025-02-08",
+        "profilePicture": null
+      },
+      "estimatedWeight": 3,
+      "address": "Nostrum minim distin",
+      "city": "Assumenda sunt volup",
+      "collectionDate": "2025-02-08",
+      "timeSlot": "13:12",
+      "status": "PENDING",
+      "additionalNotes": "Perferendis tempor d",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "cbb1",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "Douar Algouz Iznaguen",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 10,
+      "address": "Et perspiciatis eum",
+      "city": "Dolor irure cumque m",
+      "collectionDate": "2025-02-09",
+      "timeSlot": "10:35",
+      "status": "PENDING",
+      "additionalNotes": "Quo quia tempora lab",
+      "items": [
+        {
+          "wasteType": "GLASS",
+          "weight": 2
+        },
+        {
+          "wasteType": "METAL",
+          "weight": 8
+        }
+      ]
+    },
+    {
+      "id": "5d9d",
+      "user": {
+        "lastName": "chakir",
+        "firstName": "Hop",
+        "email": "sykomiho@mailinator.com",
+        "phone": "0651867166",
+        "address": "Douar Algouz Iznaguen",
+        "city": "Douar Algouz Iznaguen",
+        "birthDate": "2019-06-25",
+        "id": "6ba1"
+      },
+      "estimatedWeight": 4,
+      "address": "Tempor architecto as",
+      "city": "Ut mollitia maxime e",
+      "collectionDate": "2025-02-09",
+      "timeSlot": "17:54",
+      "status": "PENDING",
+      "additionalNotes": "Consequuntur id sit",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 4
         }
       ]
     }

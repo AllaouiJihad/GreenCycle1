@@ -51,6 +51,20 @@
       "role": "PARTICULAR",
       "createdAt": "2025-02-08",
       "profilePicture": null
+    },
+    {
+      "id": "f599",
+      "firstName": "JIHAD",
+      "lastName": "Allaoui",
+      "email": "allaoui@gmail.com",
+      "password": "allaoui@gmail.com",
+      "address": "",
+      "city": "",
+      "phone": "0700945867",
+      "birthDate": "2001-01-27",
+      "role": "PARTICULAR",
+      "createdAt": "2025-02-09",
+      "profilePicture": null
     }
   ],
   "collectionRequests": [
@@ -127,7 +141,7 @@
       "city": "Ab ullam quae autem ",
       "collectionDate": "2004-07-07",
       "timeSlot": "12:31",
-      "status": "PENDING",
+      "status": "OCCUPIED",
       "additionalNotes": "Aut modi id aute est",
       "items": [
         {
@@ -253,6 +267,40 @@
         {
           "wasteType": "GLASS",
           "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "f4f7",
+      "user": {
+        "id": "f599",
+        "firstName": "JIHAD",
+        "lastName": "Allaoui",
+        "email": "allaoui@gmail.com",
+        "password": "allaoui@gmail.com",
+        "address": "",
+        "city": "",
+        "phone": "0700945867",
+        "birthDate": "2001-01-27",
+        "role": "PARTICULAR",
+        "createdAt": "2025-02-09",
+        "profilePicture": null
+      },
+      "estimatedWeight": 10,
+      "address": "LOT EL MASSIRA NR 394 RISSANI",
+      "city": "meknes",
+      "collectionDate": "2025-02-22",
+      "timeSlot": "01:04",
+      "status": "PENDING",
+      "additionalNotes": "",
+      "items": [
+        {
+          "wasteType": "PLASTIC",
+          "weight": 9
+        },
+        {
+          "wasteType": "GLASS",
+          "weight": 1
         }
       ]
     }

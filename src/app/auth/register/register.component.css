@@ -1,0 +1,21 @@
+body {
+  background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background-color: #2E7D32;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #1B5E20;
+}
+
+.form-control {
+  border-radius: 8px;
+}

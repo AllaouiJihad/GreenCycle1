@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../../layouts/navbar/navbar.component";
 import { SidebarComponent } from "../../layouts/sidebar/sidebar.component";
-import { Observable } from "rxjs";
+import {map, Observable} from "rxjs";
 import {CollectionRequest, CollectionStatus} from "../../core/models/collection-request.model";
 import { selectCollectionRequests } from "../../core/stores/collectionRequest/collection-request.reducer";
 import { CollectionRequestActions } from "../../core/stores/collectionRequest/collection-request.actions";
@@ -9,6 +9,7 @@ import { Store } from "@ngrx/store";
 import { AsyncPipe, NgClass, NgForOf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { CollectionRequestService } from "../../core/services/collection-request/collection-request.service";
+import {User} from "../../core/models/user.model";
 
 @Component({
   selector: 'app-request-list',
@@ -25,6 +26,7 @@ import { CollectionRequestService } from "../../core/services/collection-request
   styleUrl: './request-list.component.css'
 })
 export class RequestListComponent implements OnInit {
+  user?: User | null;
   collectionRequests$: Observable<CollectionRequest[]>;
   collectionRequests: CollectionRequest[] = [];
 
@@ -32,7 +34,23 @@ export class RequestListComponent implements OnInit {
     private store: Store,
     private collectionRequestService: CollectionRequestService
   ) {
-    this.collectionRequests$ = this.store.select(selectCollectionRequests);
+    const userString = localStorage.getItem('user');
+    let currentUser: User | null = null;
+    if (userString) {
+      try {
+        currentUser = JSON.parse(userString);
+      } catch (error) {
+        console.error("Erreur lors du parsing de l'utilisateur stocké", error);
+      }
+    }
+
+    this.user = currentUser;
+    this.collectionRequests$ = this.store.select(selectCollectionRequests).pipe(
+      map(collectionRequests =>
+        collectionRequests.filter(req => req.user?.city === this.user?.city
+        )
+      )
+    );
   }
 
   ngOnInit() {

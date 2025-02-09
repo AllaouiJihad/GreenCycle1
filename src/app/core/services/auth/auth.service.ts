@@ -17,7 +17,7 @@ export class AuthService {
       .pipe(
         map(users => {
           if (users.length > 0) {
-            return users[0]; // On prend le premier utilisateur trouvé
+            return users[0];
           } else {
             throw new Error('Email ou mot de passe incorrect');
           }

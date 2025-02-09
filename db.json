@@ -5,9 +5,9 @@
       "firstName": "Randall",
       "lastName": "Small",
       "email": "mowu@mailinator.com",
-      "password": "Pa$$w0rd!",
+      "password": "mowu@mailinator.com",
       "address": "Incidunt inventore ",
-      "city": "Nam sint beatae minu",
+      "city": "Marrakech",
       "phone": "+1 (414) 478-5409",
       "birthDate": "1978-07-15",
       "role": "PARTICULAR",
@@ -21,7 +21,7 @@
       "email": "wecuq@mailinator.com",
       "password": "wecuq@mailinator.com",
       "address": "Eos officia et nostr",
-      "city": "Soluta ratione nihil",
+      "city": "ouarzazate",
       "phone": "+1 (782) 445-3656",
       "birthDate": "2019-05-02",
       "role": "COLLECTOR",
@@ -34,7 +34,7 @@
       "email": "sykomiho@mailinator.com",
       "phone": "0651867166",
       "address": "Douar Algouz Iznaguen",
-      "city": "Douar Algouz Iznaguen",
+      "city": "ouarzazate",
       "birthDate": "2019-06-25",
       "id": "6ba1"
     },
@@ -44,8 +44,8 @@
       "lastName": "Powers",
       "email": "cicadi@mailinator.com",
       "password": "cicadi@mailinator.com",
-      "address": "",
-      "city": "",
+      "address": "ouarzazate",
+      "city": "ouarzazate",
       "phone": "+1 (183) 617-1078",
       "birthDate": "1972-05-26",
       "role": "PARTICULAR",
@@ -62,7 +62,7 @@
         "email": "sykomiho@mailinator.com",
         "phone": "0651867166",
         "address": "Douar Algouz Iznaguen",
-        "city": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
         "birthDate": "2019-06-25",
         "id": "6ba1"
       },
@@ -88,7 +88,7 @@
         "email": "sykomiho@mailinator.com",
         "phone": "0651867166",
         "address": "Douar Algouz Iznaguen",
-        "city": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
         "birthDate": "2019-06-25",
         "id": "6ba1"
       },
@@ -118,7 +118,7 @@
         "email": "sykomiho@mailinator.com",
         "phone": "0651867166",
         "address": "Douar Algouz Iznaguen",
-        "city": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
         "birthDate": "2019-06-25",
         "id": "6ba1"
       },
@@ -148,8 +148,8 @@
         "lastName": "Powers",
         "email": "cicadi@mailinator.com",
         "password": "cicadi@mailinator.com",
-        "address": "",
-        "city": "",
+        "address": "ouarzazate",
+        "city": "Marrakech",
         "phone": "+1 (183) 617-1078",
         "birthDate": "1972-05-26",
         "role": "PARTICULAR",
@@ -178,7 +178,7 @@
         "email": "sykomiho@mailinator.com",
         "phone": "0651867166",
         "address": "Douar Algouz Iznaguen",
-        "city": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
         "birthDate": "2019-06-25",
         "id": "6ba1"
       },
@@ -208,7 +208,7 @@
         "email": "sykomiho@mailinator.com",
         "phone": "0651867166",
         "address": "Douar Algouz Iznaguen",
-        "city": "Douar Algouz Iznaguen",
+        "city": "ouarzazate",
         "birthDate": "2019-06-25",
         "id": "6ba1"
       },
@@ -222,6 +222,36 @@
       "items": [
         {
           "wasteType": "PLASTIC",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "0c64",
+      "user": {
+        "id": "3cb6",
+        "firstName": "Randall",
+        "lastName": "Small",
+        "email": "mowu@mailinator.com",
+        "password": "mowu@mailinator.com",
+        "address": "Incidunt inventore ",
+        "city": "ouarzazate",
+        "phone": "+1 (414) 478-5409",
+        "birthDate": "1978-07-15",
+        "role": "PARTICULAR",
+        "createdAt": "2025-02-04",
+        "profilePicture": "1737378429576.jpg"
+      },
+      "estimatedWeight": 4,
+      "address": "Eos cupiditate id e",
+      "city": "Qui consequatur Con",
+      "collectionDate": "2025-02-09",
+      "timeSlot": "17:31",
+      "status": "PENDING",
+      "additionalNotes": "Occaecat dolorum ill",
+      "items": [
+        {
+          "wasteType": "GLASS",
           "weight": 4
         }
       ]

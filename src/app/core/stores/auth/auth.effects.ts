@@ -16,7 +16,7 @@ export class AuthEffects {
   registerUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.registerUser),
-        tap(action => console.log("Action reçue : ", action)), // Vérification
+        tap(action => console.log("Action reçue : ", action)),
         switchMap(({ user }) =>
         this.authService.register(user).pipe(
           map((response) => AuthActions.registerUserSuccess({ user: response })),
